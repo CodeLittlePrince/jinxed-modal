@@ -1,0 +1,45 @@
+html{
+    font-size: 64px;
+}
+
+.w-removeScroll{
+    overflow: hidden;
+}
+
+.w-modal_mask{
+    position: fixed;
+    z-index: 998;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.w-modal{
+    position: fixed;
+    z-index: 999;
+    top: 50%;
+    left: 50%;
+    transform:translateX(-50%) translateY(-50%);
+    -webkit-transform:translateX(-50%) translateY(-50%);
+    width: 5.8rem;
+    background-color: #fff;
+    border-radius: 0.1rem;
+    box-sizing: border-box;
+    padding: 0.56rem 0.4rem;
+}
+
+.w-modal .w-close{
+    border-radius: 0 0.1rem 0 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 30;
+    display: inline-block;
+    width: 0.74rem;
+    height: 0.74rem;
+    background: url(img/modal-close.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}

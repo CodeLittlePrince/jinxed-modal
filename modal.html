@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jinxed-modal</title>
+    <link rel="stylesheet" type="text/css" href="modal.css">
+    <style type="text/css">
+        header{font-size: 0.3rem;line-height: 1.5;color: #333;margin-bottom: 0.65rem;text-align: center;}
+        .f-clearfix:after{content: '.';display: block;clear: both;height: 0;overflow: hidden;visibility: hidden;}
+        .cancel{border-color: #e5e5e5;background-color: #e5e5e5;color: #fff;border-radius: 0.06rem;width: 2.4rem;height: 0.8rem;font-size:0.3rem;line-height: 0.8rem;text-align: center;}
+        .confirm{border-color: #ff6fa2;background-color: #ff6fa2;color: #fff;border-radius: 0.06rem;width: 2.4rem;height: 0.8rem;font-size:0.3rem;line-height: 0.8rem;text-align: center;}
+        .l-left{float: left;}
+        .l-right{float: right;}
+    </style>
+</head>
+<body>
+    <button id="show">Show</button>
+    <div id="js-reset" style="height: 0; width: 6.4rem"></div>
+    <script type="text/javascript" src="js/rem.js"></script>
+    <script type="text/javascript" src="js/utility.js"></script>
+    <script type="text/javascript" src="js/widget.js"></script>
+    <script type="text/javascript" src="js/modal.js"></script>
+    <script type="text/javascript">
+        var showBtn = document.getElementById('show');
+        var modal;
+        tpl =
+            '<header>你不给个Star吗？</header>'+
+            '<div class="f-clearfix">'+
+                '<div class="w-cancel cancel l-left">取消</div>'+
+                '<div class="w-confirm confirm l-right">确定</div>'+
+            '</div>';
+        showBtn.onclick = function(){
+            modal = new Modal();
+            if (!modal.isShowed()) {
+                modal.show({
+                    width: 5.8,
+                    hasMask: true,
+                    hasClose: true,
+                    content: tpl
+                });
+                modal.on('close', function() {
+                    console.log('close');
+                });
+                modal.on('confirm', function(){
+                    console.log('confirm');
+                });
+                modal.on('cancel', function(){
+                    console.log('cancel');
+                });
+            }
+        }
+    </script>
+</body>
+</html>
