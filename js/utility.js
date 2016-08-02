@@ -15,6 +15,20 @@ window.Utility = {
         }
         return out;
     },
+    getElementsByClassName: function(root, clsName){
+        if (root.getElementsByClassName) {
+            return root.getElementsByClassName(clsName);
+        }else{
+            var elems = root.getElementsByTagName('*');
+            var result = [];
+            for(var i = 0, elem; elem = elems[i]; i++){
+                if (this.hasClass(elem, clsName)) {
+                    result.push(elem);
+                }
+            }
+        }
+        return result;
+    },
     addEvent:
             document.addEventListener?
             function(elem, type, listener, useCapture){

@@ -47,7 +47,7 @@ Modal.prototype = u.extend({}, new w(), {
             u.addClass(body, 'w-removeScroll');
             u.addEvent(body, 'touchmove', this.preventDefault, false);
             // 如果弹窗中有scroll的元素，则在class中加: w-touchMove
-            var touchMoves = this.boundingBox.getElementsByClassName('w-touchMove');
+            var touchMoves = u.getElementsByClassName(this.boundingBox, 'w-touchMove');
             if (!!touchMoves) {
                 for(var i = 0, len = touchMoves.length; i < len; i++){
                     u.addEvent(touchMoves[i], 'touchmove', function(e){
