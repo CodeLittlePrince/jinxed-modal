@@ -1,3 +1,4 @@
 # ignore directory
 logs
+# ignore file
 .com.apple.timemachine.supported
